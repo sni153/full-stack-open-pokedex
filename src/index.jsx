@@ -1,13 +1,10 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter as Router } from 'react-router-dom'
 import App from './App'
 import './styles.css'
+import { createRoot } from 'react-dom/client'
 
-import { document } from 'react-dom'
+// eslint-disable-next-line no-undef
+const domNode = document.getElementById('app')
+const root = createRoot(domNode)
 
-ReactDOM.createRoot(document.getElementById('app')).render(
-  <Router>
-    <App />
-  </Router>
-)
+root.render(<App />)
