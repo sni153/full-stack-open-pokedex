@@ -14,3 +14,13 @@ app.listen(PORT, () => {
 app.get('/version', (req, res) => {
   res.send('2')
 })
+
+app.get('/health', (req, res) => {
+  const isAppHealthy = true
+
+  if (!isAppHealthy) {
+    res.status(500).send('Application is not healthy')
+  } else {
+    res.send('Application is healthy')
+  }
+})
